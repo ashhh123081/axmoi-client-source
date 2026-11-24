@@ -1,0 +1,703 @@
+[
+  {
+    "module": "backtrack",
+    "field": "backtrack.delay",
+    "offset": "0x6c",
+    "display_rva": "0x5ec70",
+    "live_display": "168 ms",
+    "instructions": [
+      "0x5ec70 push rsi",
+      "0x5ec71 push rdi",
+      "0x5ec72 sub rsp, 0x28",
+      "0x5ec76 mov rsi, rcx",
+      "0x5ec79 mov rax, qword ptr [rip + 0x406a08]",
+      "0x5ec80 mov rdi, qword ptr [rax]",
+      "0x5ec83 mov rcx, qword ptr [rcx + 0x98]",
+      "0x5ec8a add rsi, 0x20",
+      "0x5ec8e call 0x4070",
+      "0x5ec93 mov r8d, dword ptr [rdi + 0x6c]",
+      "0x5ec97 mov rcx, rsi",
+      "0x5ec9a mov rdx, rax",
+      "0x5ec9d call 0x523b0",
+      "0x5eca2 mov al, 1",
+      "0x5eca4 add rsp, 0x28",
+      "0x5eca8 pop rdi",
+      "0x5eca9 pop rsi",
+      "0x5ecaa ret "
+    ]
+  },
+  {
+    "module": "right-clicker",
+    "field": "right-clicker.cps",
+    "offset": "0x310",
+    "display_rva": "0xbdee0",
+    "live_display": "26 CPS",
+    "instructions": [
+      "0xbdee0 push rsi",
+      "0xbdee1 push rdi",
+      "0xbdee2 sub rsp, 0x28",
+      "0xbdee6 mov rsi, rcx",
+      "0xbdee9 mov rax, qword ptr [rip + 0x3a7798]",
+      "0xbdef0 mov rdi, qword ptr [rax]",
+      "0xbdef3 mov rcx, qword ptr [rcx + 0x8ba0]",
+      "0xbdefa add rsi, 0x20",
+      "0xbdefe call 0x4070",
+      "0xbdf03 movss xmm0, dword ptr [rdi + 0x310]",
+      "0xbdf0b cvtss2sd xmm2, xmm0",
+      "0xbdf0f mov rcx, rsi",
+      "0xbdf12 mov rdx, rax",
+      "0xbdf15 movq r8, xmm2",
+      "0xbdf1a call 0x523b0",
+      "0xbdf1f mov al, 1",
+      "0xbdf21 add rsp, 0x28",
+      "0xbdf25 pop rdi",
+      "0xbdf26 pop rsi",
+      "0xbdf27 ret "
+    ]
+  },
+  {
+    "module": "hud",
+    "field": "hud.color-r",
+    "offset": "0x648",
+    "display_rva": "0x8b747",
+    "live_display": "0.415",
+    "instructions": [
+      "0x8b747 movsd xmm1, qword ptr [r12 + 0x648]",
+      "0x8b751 movsd qword ptr [rbx + 0x3c], xmm1",
+      "0x8b77c movss xmm1, dword ptr [rax + 0x648]",
+      "0x8b784 mulss xmm1, xmm0",
+      "0x8b788 cvttss2si rcx, xmm1",
+      "0x8b792 shl ecx, 0x10",
+      "0x8b7c0 or ebp, 0xff000000"
+    ]
+  },
+  {
+    "module": "hud",
+    "field": "hud.color-g",
+    "offset": "0x64c",
+    "display_rva": "0x8b747",
+    "live_display": "0.415",
+    "instructions": [
+      "0x8b747 movsd xmm1, qword ptr [r12 + 0x648]",
+      "0x8b751 movsd qword ptr [rbx + 0x3c], xmm1",
+      "0x8b795 movss xmm1, dword ptr [rax + 0x64c]",
+      "0x8b79d mulss xmm1, xmm0",
+      "0x8b7a1 cvttss2si rdx, xmm1",
+      "0x8b7a6 shl edx, 0x8",
+      "0x8b7c0 or ebp, 0xff000000"
+    ]
+  },
+  {
+    "module": "hud",
+    "field": "hud.color-b",
+    "offset": "0x650",
+    "display_rva": "0x8b738",
+    "live_display": "0.415",
+    "instructions": [
+      "0x8b738 movss xmm0, dword ptr [r12 + 0x650]",
+      "0x8b756 movss dword ptr [rbx + 0x44], xmm0",
+      "0x8b7ac mulss xmm0, dword ptr [rax + 0x650]",
+      "0x8b7b4 cvttss2si rax, xmm0",
+      "0x8b7bb movzx ebp, al",
+      "0x8b7c0 or ebp, 0xff000000"
+    ]
+  },
+  {
+    "module": "triggerbot",
+    "field": "triggerbot.mode",
+    "offset": "0x36c",
+    "display_rva": "0xcd28e",
+    "live_display": "1",
+    "instructions": [
+      "0xcd28e cmp dword ptr [r15 + 0x36c], 0",
+      "0xcd296 je 0x1800cd322",
+      "0xcd29c movss xmm0, dword ptr [rip + 0x3a15d0]",
+      "0xcd2a4 mulss xmm6, xmm7",
+      "0xcd2a8 ucomiss xmm0, dword ptr [rsi + 0x1031c]",
+      "0xcd2af ja 0x1800cd377",
+      "0xcd2b5 jmp 0x1800cd37e"
+    ]
+  },
+  {
+    "module": "hud",
+    "field": "hud.opacity",
+    "offset": "0x644",
+    "display_rva": "0x8babe",
+    "live_display": "1.1 (clamped to 1.0)",
+    "instructions": [
+      "0x8babe movss xmm0, dword ptr [rax + 0x644]",
+      "0x8bac6 movss xmm1, dword ptr [rip + 0x3df616]",
+      "0x8bace movss xmm2, dword ptr [rip + 0x3df612]",
+      "0x8bad6 cmpltss xmm2, xmm0",
+      "0x8badb mulss xmm0, xmm1",
+      "0x8badf andps xmm0, xmm2",
+      "0x8bae2 andnps xmm2, xmm1",
+      "0x8bae5 orps xmm2, xmm0"
+    ]
+  },
+  {
+    "module": "hud",
+    "field": "hud.watermark",
+    "offset": "0x630",
+    "display_rva": "0x8b605",
+    "live_display": "1",
+    "evidence": "Main HUD text pass at 0x8b605/0x8b610"
+  },
+  {
+    "module": "hud",
+    "field": "hud.background",
+    "offset": "0x631",
+    "display_rva": "Second HUD pass is called only when [config+0x631] is set (0x8c1ef -> 0x8ac20)",
+    "live_display": "1",
+    "evidence": "Second HUD pass is called only when [config+0x631] is set (0x8c1ef -> 0x8ac20)"
+  },
+  {
+    "module": "hud",
+    "field": "hud.fps",
+    "offset": "0x632",
+    "display_rva": "0x8b635",
+    "live_display": "1",
+    "evidence": "Second HUD text block at 0x8b635"
+  },
+  {
+    "module": "hud",
+    "field": "hud.module-list",
+    "offset": "0x633",
+    "display_rva": "0x8b6e9",
+    "live_display": "1",
+    "evidence": "HUD list block at 0x8b6e9/0x8b968"
+  },
+  {
+    "module": "hud",
+    "field": "hud.ping",
+    "offset": "0x634",
+    "display_rva": "0x8b9fa",
+    "live_display": "1",
+    "evidence": "HUD info block at 0x8b9fa"
+  },
+  {
+    "module": "hud",
+    "field": "hud.coordinates",
+    "offset": "0x635",
+    "display_rva": "0x8ba07",
+    "live_display": "1",
+    "evidence": "Selects the second info string at 0x8ba07/0x8ba16"
+  },
+  {
+    "module": "hud",
+    "field": "hud.keybinds",
+    "offset": "0x63b",
+    "display_rva": "0x8bb76",
+    "live_display": "1",
+    "evidence": "Adds the keybind/extra line spacing at 0x8bb76"
+  },
+  {
+    "module": "hud",
+    "field": "hud.notifications",
+    "offset": "0x63c",
+    "display_rva": "0x97f65",
+    "live_display": "1",
+    "evidence": "HUD notification path at 0x97f65/0xb52c8"
+  },
+  {
+    "module": "hud",
+    "field": "hud.obfuscate",
+    "offset": "0x63d",
+    "display_rva": "0x8b980",
+    "live_display": "1",
+    "evidence": "Per-character HUD obfuscation loop at 0x8b980/0x8ba34"
+  },
+  {
+    "module": "hud",
+    "field": "hud.target-hud",
+    "offset": "0x63e",
+    "display_rva": "0x8bde3",
+    "live_display": "1",
+    "evidence": "Final HUD element pass at 0x8bde3"
+  },
+  {
+    "module": "hud",
+    "field": "hud.scale",
+    "offset": "0x640",
+    "display_rva": "0x8acd9",
+    "live_display": "1.136",
+    "instructions": [
+      "0x8acd9 mov rdi, rdx",
+      "0x8acdc mov rax, qword ptr [rip + 0x3da9a5]",
+      "0x8ace3 mov rax, qword ptr [rax]",
+      "0x8ace6 movss xmm6, dword ptr [rax + 0x640]",
+      "0x8ad1b addss xmm6, xmm6",
+      "0x8ad1f divss xmm0, xmm6",
+      "0x8ad2d movsd qword ptr [r14 + 0xf8], xmm0"
+    ]
+  },
+  {
+    "module": "auto-totem",
+    "field": "auto-totem.delay",
+    "offset": "0x430",
+    "display_rva": "0x5dc28",
+    "live_display": "80 ms",
+    "instructions": [
+      "0x5dc28 mov rax, qword ptr [rip + 0x407a59]",
+      "0x5dc2f mov rax, qword ptr [rax]",
+      "0x5dc32 mov ebx, dword ptr [rax + 0x430]",
+      "0x5dc38 test ebx, ebx",
+      "0x5dc3c lea edi, [rbx - 0x32]",
+      "0x5dc3f add ebx, 0x32",
+      "0x5dc74 addsd xmm0, xmm6",
+      "0x5dc83 cmovge edi, ebx",
+      "0x5dc8a mov dword ptr [rsi + 0xa8c], edi"
+    ]
+  },
+  {
+    "module": "auto-totem",
+    "field": "auto-totem.health",
+    "offset": "0x434",
+    "display_rva": "0x5dffb",
+    "live_display": "8 HP",
+    "instructions": [
+      "0x5df92 movss xmm0, dword ptr [r15 + 0xfc]",
+      "0x5dfc9 call qword ptr [rax + 0x1e8]",
+      "0x5dffb cvtsi2ss xmm6, dword ptr [r14 + 0x434]",
+      "0x5e004 ucomiss xmm0, xmm6",
+      "0x5e007 jbe 0x18005e075"
+    ]
+  },
+  {
+    "module": "auto-totem",
+    "field": "auto-totem.switch-back",
+    "offset": "0x42c",
+    "display_rva": "0x5e009",
+    "live_display": "0",
+    "instructions": [
+      "0x5e009 cmp byte ptr [r14 + 0x42c], 0",
+      "0x5e011 mov rax, rsi",
+      "0x5e014 je 0x18005e0b0",
+      "0x5e01a cmp dword ptr [rax + 0xa88], -1",
+      "0x5e021 je 0x18005e0b0"
+    ]
+  },
+  {
+    "module": "auto-soup",
+    "field": "auto-soup.health",
+    "offset": "0x38c",
+    "display_rva": "0x5ce99",
+    "live_display": "13 HP",
+    "instructions": [
+      "0x5ce13 cmp dword ptr [r14 + 0x38c], 0x13",
+      "0x5ce99 cvtsi2ss xmm1, dword ptr [r14 + 0x38c]",
+      "0x5cea2 ucomiss xmm0, xmm1",
+      "0x5cea5 jae 0x18005d544"
+    ]
+  },
+  {
+    "module": "auto-soup",
+    "field": "auto-soup.delay",
+    "offset": "0x394",
+    "display_rva": "0x5cfbf",
+    "live_display": "1 (50 ms)",
+    "instructions": [
+      "0x5cfbf mov ebx, dword ptr [rax + 0x394]",
+      "0x5cfc5 test ebx, ebx",
+      "0x5cfd6 add ebx, 2",
+      "0x5d001 cvttsd2si eax, xmm1",
+      "0x5d012 imul r13, rax, 0x32",
+      "0x5d025 call 0x1800e68e0"
+    ]
+  },
+  {
+    "module": "auto-soup",
+    "field": "auto-soup.randomize",
+    "offset": "0x390",
+    "display_rva": "0x5d099",
+    "live_display": "1",
+    "instructions": [
+      "0x5d099 cmp byte ptr [r14 + 0x390], 0",
+      "0x5d0a1 je 0x18005d103",
+      "0x5d0ac mulsd xmm0, qword ptr [rip + 0x40b33c]",
+      "0x5d0d8 or rdx, rax",
+      "0x5d0eb lea rdx, [rdi + rbp]",
+      "0x5d0f7 call 0x1800e6b20"
+    ]
+  },
+  {
+    "module": "refill",
+    "field": "refill.speed",
+    "offset": "0x3fc",
+    "display_rva": "0xbb0a2",
+    "live_display": "10",
+    "instructions": [
+      "0xbb0a2 mov eax, dword ptr [r14 + 0x3fc]",
+      "0xbb0a9 add eax, eax",
+      "0xbb0ab mov ecx, 0x13",
+      "0xbb0b0 sub ecx, eax",
+      "0xbb0bb cmp edx, 2",
+      "0xbb0c3 cmovl edx, ecx",
+      "0xbb0e0 lea edi, [rdx + rdx*4]",
+      "0xbb0ed lea r14, [rdx + rdx*4]",
+      "0xbb136 cvttsd2si rax, xmm2",
+      "0xbb195 mov qword ptr [rsi + 0xb10], rdx",
+      "0xbb19c mov qword ptr [rsi + 0xb08], r12"
+    ]
+  },
+  {
+    "module": "sprint-reset",
+    "field": "sprint-reset.chance",
+    "offset": "0x610",
+    "display_rva": "0xbf3b4",
+    "live_display": "45%",
+    "instructions": [
+      "0xbf3b4 cvtsi2ss xmm7, dword ptr [rbx + 0x610]",
+      "0xbf3cd movapd xmm1, xmmword ptr [rip + 0x3ae4db]",
+      "0xbf3d5 mulpd xmm0, xmm1",
+      "0xbf3d9 addpd xmm0, xmm1",
+      "0xbf56b movss xmm2, dword ptr [rip + 0x3ae361]",
+      "0xbf573 minss xmm4, xmm2",
+      "0xbf577 mulss xmm4, xmm7",
+      "0xbf57b cvttss2si rcx, xmm4"
+    ]
+  },
+  {
+    "module": "fake-lag",
+    "field": "fake-lag.mode",
+    "offset": "0x1c4",
+    "display_rva": "0x7ebc8",
+    "live_display": "2",
+    "instructions": [
+      "0x7ebc8 mov eax, dword ptr [r13 + 0x1c4]",
+      "0x7ebcf dec eax",
+      "0x7ebd1 cmp eax, 3",
+      "0x7ebd4 ja 0x18007ef0f",
+      "0x7ebda lea r8, [rip + 0x3eb377]",
+      "0x7ebe1 movsxd rax, dword ptr [r8 + rax*4]",
+      "0x7ebe5 add rax, r8",
+      "0x7ebe8 jmp rax"
+    ]
+  },
+  {
+    "module": "name-tags",
+    "field": "name-tags.color-red",
+    "offset": "0x24c",
+    "display_rva": "0x622ed/0x69c89/0x6a064",
+    "live_display": "color component",
+    "evidence": "Name-tag RGB float triple loaded at 0x622ed/0x69c89/0x6a064"
+  },
+  {
+    "module": "name-tags",
+    "field": "name-tags.color-green",
+    "offset": "0x250",
+    "display_rva": "0x622ed/0x69c89/0x6a064",
+    "live_display": "color component",
+    "evidence": "Name-tag RGB float triple loaded at 0x622ed/0x69c89/0x6a064"
+  },
+  {
+    "module": "name-tags",
+    "field": "name-tags.color-blue",
+    "offset": "0x254",
+    "display_rva": "0x622ed/0x69c89/0x6a064",
+    "live_display": "color component",
+    "evidence": "Name-tag RGB float triple loaded at 0x622ed/0x69c89/0x6a064"
+  },
+  {
+    "module": "chams",
+    "field": "chams.visible-color-red",
+    "offset": "0x188",
+    "display_rva": "0x79d41",
+    "live_display": "color component",
+    "evidence": "First chams RGB float triple loaded at 0x79d41"
+  },
+  {
+    "module": "chams",
+    "field": "chams.visible-color-green",
+    "offset": "0x18c",
+    "display_rva": "0x79d41",
+    "live_display": "color component",
+    "evidence": "First chams RGB float triple loaded at 0x79d41"
+  },
+  {
+    "module": "chams",
+    "field": "chams.visible-color-blue",
+    "offset": "0x190",
+    "display_rva": "0x79d41",
+    "live_display": "color component",
+    "evidence": "First chams RGB float triple loaded at 0x79d41"
+  },
+  {
+    "module": "chams",
+    "field": "chams.hidden-color-red",
+    "offset": "0x194",
+    "display_rva": "0x79da8",
+    "live_display": "color component",
+    "evidence": "Second chams RGB float triple loaded at 0x79da8"
+  },
+  {
+    "module": "chams",
+    "field": "chams.hidden-color-green",
+    "offset": "0x198",
+    "display_rva": "0x79da8",
+    "live_display": "color component",
+    "evidence": "Second chams RGB float triple loaded at 0x79da8"
+  },
+  {
+    "module": "chams",
+    "field": "chams.hidden-color-blue",
+    "offset": "0x19c",
+    "display_rva": "0x79da8",
+    "live_display": "color component",
+    "evidence": "Second chams RGB float triple loaded at 0x79da8"
+  },
+  {
+    "module": "player-esp",
+    "field": "player-esp.box-color-red",
+    "offset": "0x284",
+    "display_rva": "0xab3ae/0xab3b7",
+    "live_display": "color component",
+    "evidence": "Player ESP RGB float triple loaded at 0xab3ae/0xab3b7"
+  },
+  {
+    "module": "player-esp",
+    "field": "player-esp.box-color-green",
+    "offset": "0x288",
+    "display_rva": "0xab3ae/0xab3b7",
+    "live_display": "color component",
+    "evidence": "Player ESP RGB float triple loaded at 0xab3ae/0xab3b7"
+  },
+  {
+    "module": "player-esp",
+    "field": "player-esp.box-color-blue",
+    "offset": "0x28c",
+    "display_rva": "0xab3ae/0xab3b7",
+    "live_display": "color component",
+    "evidence": "Player ESP RGB float triple loaded at 0xab3ae/0xab3b7"
+  },
+  {
+    "module": "player-esp",
+    "field": "player-esp.text-color-red",
+    "offset": "0x298",
+    "display_rva": "0xacb6f/0xacb7d/0xacb8b",
+    "live_display": "color component",
+    "evidence": "Player ESP second RGB float triple loaded at 0xacb6f/0xacb7d/0xacb8b"
+  },
+  {
+    "module": "player-esp",
+    "field": "player-esp.text-color-green",
+    "offset": "0x29c",
+    "display_rva": "0xacb6f/0xacb7d/0xacb8b",
+    "live_display": "color component",
+    "evidence": "Player ESP second RGB float triple loaded at 0xacb6f/0xacb7d/0xacb8b"
+  },
+  {
+    "module": "player-esp",
+    "field": "player-esp.text-color-blue",
+    "offset": "0x2a0",
+    "display_rva": "0xacb6f/0xacb7d/0xacb8b",
+    "live_display": "color component",
+    "evidence": "Player ESP second RGB float triple loaded at 0xacb6f/0xacb7d/0xacb8b"
+  },
+  {
+    "module": "outlines",
+    "field": "outlines.color-red",
+    "offset": "0x2b4",
+    "display_rva": "0x864bc/0x864c4",
+    "live_display": "color component",
+    "evidence": "Outline RGB float triple loaded at 0x864bc/0x864c4"
+  },
+  {
+    "module": "outlines",
+    "field": "outlines.color-green",
+    "offset": "0x2b8",
+    "display_rva": "0x864bc/0x864c4",
+    "live_display": "color component",
+    "evidence": "Outline RGB float triple loaded at 0x864bc/0x864c4"
+  },
+  {
+    "module": "outlines",
+    "field": "outlines.color-blue",
+    "offset": "0x2bc",
+    "display_rva": "0x864bc/0x864c4",
+    "live_display": "color component",
+    "evidence": "Outline RGB float triple loaded at 0x864bc/0x864c4"
+  },
+  {
+    "module": "bridge-assist",
+    "field": "bridge-assist.require-sneak",
+    "offset": "0x170",
+    "display_rva": "0x786b7",
+    "live_display": "1",
+    "instructions": [
+      "0x786b7 cmp byte ptr [r14 + 0x170], 0",
+      "0x786bf je 0x1800786d4",
+      "0x786c1 test ax, ax",
+      "0x786c4 js 0x1800786d4",
+      "0x786c6 xor eax, eax",
+      "0x786d3 ret"
+    ]
+  },
+  {
+    "module": "bridge-assist",
+    "field": "bridge-assist.blatant",
+    "offset": "0x171",
+    "display_rva": "0x786d4",
+    "live_display": "0",
+    "instructions": [
+      "0x786d4 cmp byte ptr [r14 + 0x171], 0",
+      "0x786dc mov rax, rdi",
+      "0x786df je 0x180078736",
+      "0x786e1 mov rdx, qword ptr [rax + 0x18]",
+      "0x786e8 movzx edx, byte ptr [r14 + 0x195]",
+      "0x786f2 je 0x1800786c6"
+    ]
+  },
+  {
+    "module": "fast-break",
+    "field": "fast-break.speed",
+    "offset": "0x204",
+    "display_rva": "0x80d70",
+    "live_display": "native default",
+    "evidence": "Fast-break update multiplies the break speed by [config+0x204] at 0x80d70"
+  },
+  {
+    "module": "freelook",
+    "field": "freelook.sensitivity",
+    "offset": "0x220",
+    "display_rva": "0x8553d",
+    "live_display": "native default",
+    "evidence": "Freelook reads [config+0x220] as a float multiplier at 0x8553d"
+  },
+  {
+    "module": "fireballs",
+    "field": "fireballs.color-red",
+    "offset": "0x4f0",
+    "display_rva": "0x82a0b/0x82a14/0x82a1d",
+    "live_display": "native default",
+    "evidence": "Fireball renderer reads RGB floats [0x4f0,0x4f4,0x4f8] at 0x82a0b/0x82a14/0x82a1d"
+  },
+  {
+    "module": "fireballs",
+    "field": "fireballs.color-green",
+    "offset": "0x4f4",
+    "display_rva": "0x82a0b/0x82a14/0x82a1d",
+    "live_display": "native default",
+    "evidence": "Fireball renderer reads RGB floats [0x4f0,0x4f4,0x4f8] at 0x82a0b/0x82a14/0x82a1d"
+  },
+  {
+    "module": "fireballs",
+    "field": "fireballs.color-blue",
+    "offset": "0x4f8",
+    "display_rva": "0x82a0b/0x82a14/0x82a1d",
+    "live_display": "native default",
+    "evidence": "Fireball renderer reads RGB floats [0x4f0,0x4f4,0x4f8] at 0x82a0b/0x82a14/0x82a1d"
+  },
+  {
+    "module": "fireballs",
+    "field": "fireballs.opacity",
+    "offset": "0x4fc",
+    "display_rva": "0x829e2",
+    "live_display": "native default",
+    "evidence": "Fireball renderer reads alpha [config+0x4fc] at 0x829e2"
+  },
+  {
+    "module": "fireballs",
+    "field": "fireballs.size",
+    "offset": "0x500",
+    "display_rva": "0x8289d",
+    "live_display": "native default",
+    "evidence": "Fireball renderer reads size [config+0x500] at 0x8289d"
+  },
+  {
+    "module": "hit-select",
+    "field": "hit-select.hurt-time",
+    "offset": "0x5fc",
+    "display_rva": "0x88867/0x888a2",
+    "live_display": "native default",
+    "evidence": "Hit-select compares the target hurt time against [config+0x5fc] at 0x88867/0x888a2"
+  },
+  {
+    "module": "chat",
+    "field": "chat.color-red",
+    "offset": "0x668",
+    "display_rva": "0x95e03/0x95e1c/0x95e38",
+    "live_display": "color component",
+    "evidence": "Chat RGB float triple loaded at 0x95e03/0x95e1c/0x95e38"
+  },
+  {
+    "module": "chat",
+    "field": "chat.color-green",
+    "offset": "0x66c",
+    "display_rva": "0x95e03/0x95e1c/0x95e38",
+    "live_display": "color component",
+    "evidence": "Chat RGB float triple loaded at 0x95e03/0x95e1c/0x95e38"
+  },
+  {
+    "module": "chat",
+    "field": "chat.color-blue",
+    "offset": "0x670",
+    "display_rva": "0x95e03/0x95e1c/0x95e38",
+    "live_display": "color component",
+    "evidence": "Chat RGB float triple loaded at 0x95e03/0x95e1c/0x95e38"
+  },
+  {
+    "module": "chat",
+    "field": "chat.background-red",
+    "offset": "0x688",
+    "display_rva": "0x8652a/0x86532",
+    "live_display": "color component",
+    "evidence": "Chat background RGB float triple loaded at 0x8652a/0x86532"
+  },
+  {
+    "module": "chat",
+    "field": "chat.background-green",
+    "offset": "0x68c",
+    "display_rva": "0x8652a/0x86532",
+    "live_display": "color component",
+    "evidence": "Chat background RGB float triple loaded at 0x8652a/0x86532"
+  },
+  {
+    "module": "chat",
+    "field": "chat.background-blue",
+    "offset": "0x690",
+    "display_rva": "0x8652a/0x86532",
+    "live_display": "color component",
+    "evidence": "Chat background RGB float triple loaded at 0x8652a/0x86532"
+  },
+  {
+    "module": "strafe",
+    "field": "strafe.range",
+    "offset": "0x328",
+    "display_rva": "0xc0e86",
+    "live_display": "default",
+    "evidence": "Strafe range: [config+0x328] is added to a radius and compared after squaring distance at 0xc08c2-0xc0940"
+  },
+  {
+    "module": "strafe",
+    "field": "strafe.delay",
+    "offset": "0x32c",
+    "display_rva": "0xc1049",
+    "live_display": "default",
+    "evidence": "Strafe cooldown: [config+0x32c] feeds the randomized cooldown calculation at 0xc0e30-0xc0e82 and 0xc1049"
+  },
+  {
+    "module": "chest-stealer",
+    "field": "chest-stealer.silent",
+    "offset": "0x1a8",
+    "display_rva": "0x7d600",
+    "live_display": "native",
+    "evidence": "Chest Stealer reads [config+0x1a8] to choose silent container packets at 0x7c3f9 and 0x7d600"
+  },
+  {
+    "module": "chest-stealer",
+    "field": "chest-stealer.filter",
+    "offset": "0x1a9",
+    "display_rva": "0x7ce00",
+    "live_display": "native",
+    "evidence": "Chest Stealer gates its container/item name whitelist checks on [config+0x1a9] at 0x7bb73 and 0x7ce00"
+  },
+  {
+    "module": "chest-stealer",
+    "field": "chest-stealer.speed",
+    "offset": "0x1ac",
+    "display_rva": "0x7c6a2",
+    "live_display": "native",
+    "evidence": "Chest Stealer uses [config+0x1ac] at 0x7c6a2 to select the click delay band (0 ~= 135-145 ms, 9 ~= 5-15 ms)"
+  }
+]

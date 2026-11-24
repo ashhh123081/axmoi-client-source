@@ -1,0 +1,4176 @@
+{
+  "format": "driplite-native-fields-v1",
+  "size": 1752,
+  "categories": [
+    "Combat",
+    "Visual",
+    "Movement",
+    "Utility"
+  ],
+  "modules": [
+    {
+      "id": "auto-clicker",
+      "name": "Auto Clicker",
+      "category": "Combat",
+      "object_slot_rva": "0x49ece0",
+      "vtable_rva": "0x468068",
+      "fields": [
+        {
+          "id": "auto-clicker.enabled",
+          "label": "Enabled",
+          "offset": 64,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "auto-clicker.key",
+          "label": "Keybind",
+          "offset": 68,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        },
+        {
+          "id": "auto-clicker.cps",
+          "label": "Clicks per second",
+          "offset": 92,
+          "type": "f32",
+          "min": 1,
+          "max": 50,
+          "step": 0.5,
+          "unit": "CPS",
+          "evidence": "runtime 25/30/25; UI bounds are editor limits",
+          "kind": "number"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "aim-assist",
+      "name": "Aim Assist",
+      "category": "Combat",
+      "object_slot_rva": "0x49ecd0",
+      "vtable_rva": "0x467bf8",
+      "fields": [
+        {
+          "id": "aim-assist.enabled",
+          "label": "Enabled",
+          "offset": 16,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "aim-assist.key",
+          "label": "Keybind",
+          "offset": 20,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        },
+        {
+          "id": "aim-assist.require-click",
+          "label": "Require click",
+          "offset": 33,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "step": 1,
+          "unit": "",
+          "kind": "boolean",
+          "evidence": "Static consumers: 0x4fe8c"
+        },
+        {
+          "id": "aim-assist.weapons-only",
+          "label": "Weapons only",
+          "offset": 34,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "step": 1,
+          "unit": "",
+          "kind": "boolean",
+          "evidence": "Static consumers: 0x4fef5, 0x523e0"
+        },
+        {
+          "id": "aim-assist.distance",
+          "label": "Distance",
+          "offset": 48,
+          "type": "f32",
+          "min": 0,
+          "max": 12,
+          "step": 0.05,
+          "unit": "blocks",
+          "kind": "number",
+          "evidence": "Static consumers: 0x50678, 0x50b65"
+        },
+        {
+          "id": "aim-assist.fov",
+          "label": "Field of view",
+          "offset": 52,
+          "type": "f32",
+          "min": 0,
+          "max": 360,
+          "step": 1,
+          "unit": "degrees",
+          "kind": "number",
+          "evidence": "Static consumers: 0x50801"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "triggerbot",
+      "name": "Triggerbot",
+      "category": "Combat",
+      "object_slot_rva": "0x49ecb8",
+      "vtable_rva": "0x46e958",
+      "fields": [
+        {
+          "id": "triggerbot.enabled",
+          "label": "Enabled",
+          "offset": 864,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "triggerbot.key",
+          "label": "Keybind",
+          "offset": 868,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        },
+        {
+          "id": "triggerbot.mode",
+          "label": "Mode",
+          "offset": 876,
+          "type": "i32",
+          "min": 0,
+          "max": 1,
+          "step": 1,
+          "unit": "",
+          "kind": "select",
+          "evidence": "Triggerbot update branches on [config+0x36c]; default 1 is the non-legit branch",
+          "options": [
+            {
+              "value": 0,
+              "label": "Legit"
+            },
+            {
+              "value": 1,
+              "label": "Blatant"
+            }
+          ]
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "hit-select",
+      "name": "Hit Select",
+      "category": "Combat",
+      "object_slot_rva": "0x49ee08",
+      "vtable_rva": "0x46acc0",
+      "fields": [
+        {
+          "id": "hit-select.enabled",
+          "label": "Enabled",
+          "offset": 1520,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "hit-select.key",
+          "label": "Keybind",
+          "offset": 1524,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        },
+        {
+          "id": "hit-select.hurt-time",
+          "label": "Hurt Time",
+          "offset": 1532,
+          "type": "i32",
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "unit": "",
+          "evidence": "Hit-select compares the target hurt time against [config+0x5fc] at 0x88867/0x888a2",
+          "kind": "number"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "reach",
+      "name": "Reach",
+      "category": "Combat",
+      "object_slot_rva": "0x49eda8",
+      "vtable_rva": "0x46d1b8",
+      "fields": [
+        {
+          "id": "reach.enabled",
+          "label": "Enabled",
+          "offset": 712,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "reach.key",
+          "label": "Keybind",
+          "offset": 716,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        },
+        {
+          "id": "reach.distance",
+          "label": "Reach distance",
+          "offset": 732,
+          "type": "f32",
+          "min": 0,
+          "max": 6,
+          "step": 0.05,
+          "unit": "blocks",
+          "kind": "number",
+          "evidence": "Static consumers: 0xb5aa8, 0xb5c6f"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "velocity",
+      "name": "Velocity",
+      "category": "Combat",
+      "object_slot_rva": "0x49edd8",
+      "vtable_rva": "0x46ead8",
+      "fields": [
+        {
+          "id": "velocity.enabled",
+          "label": "Enabled",
+          "offset": 944,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "velocity.key",
+          "label": "Keybind",
+          "offset": 948,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        },
+        {
+          "id": "velocity.require-target",
+          "label": "Require target",
+          "offset": 956,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "step": 1,
+          "unit": "",
+          "kind": "boolean",
+          "evidence": "Static consumers: 0xce920, 0xcf1d7"
+        },
+        {
+          "id": "velocity.require-click",
+          "label": "Require click",
+          "offset": 957,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "step": 1,
+          "unit": "",
+          "kind": "boolean",
+          "evidence": "Static consumers: 0xce820, 0xce88a"
+        },
+        {
+          "id": "velocity.require-sprint",
+          "label": "Require sprint",
+          "offset": 958,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "step": 1,
+          "unit": "",
+          "kind": "boolean",
+          "evidence": "Static consumers: 0xce83a"
+        },
+        {
+          "id": "velocity.first-hit-only",
+          "label": "First hit only",
+          "offset": 959,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "step": 1,
+          "unit": "",
+          "kind": "boolean",
+          "evidence": "Static consumers: 0xce8be, 0xcf310"
+        },
+        {
+          "id": "velocity.chance",
+          "label": "Chance",
+          "offset": 960,
+          "type": "f32",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "kind": "number",
+          "evidence": "Static consumers: 0xce906"
+        },
+        {
+          "id": "velocity.min-horizontal",
+          "label": "Min horizontal",
+          "offset": 964,
+          "type": "f32",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "kind": "number",
+          "evidence": "Static consumers: 0xced89, 0xcf23f, 0xcf269, 0xcf292",
+          "visible_when": {
+            "field": "velocity.mode",
+            "value": 0
+          }
+        },
+        {
+          "id": "velocity.max-horizontal",
+          "label": "Max horizontal",
+          "offset": 968,
+          "type": "f32",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "kind": "number",
+          "evidence": "Static consumers: 0xced93, 0xcf251, 0xcf26e",
+          "visible_when": {
+            "field": "velocity.mode",
+            "value": 0
+          }
+        },
+        {
+          "id": "velocity.min-kite",
+          "label": "Min kite",
+          "offset": 972,
+          "type": "f32",
+          "min": 100,
+          "max": 200,
+          "step": 1,
+          "unit": "%",
+          "kind": "number",
+          "evidence": "Static consumers: 0xceda5, 0xcedc0, 0xcf1c1",
+          "visible_when": {
+            "field": "velocity.mode",
+            "value": 0
+          }
+        },
+        {
+          "id": "velocity.max-kite",
+          "label": "Max kite",
+          "offset": 976,
+          "type": "f32",
+          "min": 100,
+          "max": 200,
+          "step": 1,
+          "unit": "%",
+          "kind": "number",
+          "evidence": "Static consumers: 0xcedcc, 0xcee65, 0xcf1cb",
+          "visible_when": {
+            "field": "velocity.mode",
+            "value": 0
+          }
+        },
+        {
+          "id": "velocity.mode",
+          "label": "Mode",
+          "offset": 952,
+          "type": "i32",
+          "min": 0,
+          "max": 1,
+          "step": 1,
+          "unit": "",
+          "kind": "select",
+          "evidence": "Static consumers: 0xced74, 0xced7c, 0xced81",
+          "options": [
+            {
+              "value": 0,
+              "label": "0 · Percentage"
+            },
+            {
+              "value": 1,
+              "label": "1 · Alternate"
+            }
+          ]
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "backtrack",
+      "name": "Backtrack",
+      "category": "Combat",
+      "object_slot_rva": "0x49ed00",
+      "vtable_rva": "0x468678",
+      "fields": [
+        {
+          "id": "backtrack.enabled",
+          "label": "Enabled",
+          "offset": 100,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "backtrack.key",
+          "label": "Keybind",
+          "offset": 104,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        },
+        {
+          "id": "backtrack.delay",
+          "label": "Delay",
+          "offset": 108,
+          "type": "i32",
+          "min": 0,
+          "max": 1000,
+          "step": 1,
+          "unit": "ms",
+          "kind": "number",
+          "evidence": "native display config read + live display; actual gameplay effect unmeasured"
+        },
+        {
+          "id": "backtrack.min-range",
+          "label": "Min range",
+          "offset": 112,
+          "type": "f32",
+          "min": 0,
+          "max": 12,
+          "step": 0.05,
+          "unit": "blocks",
+          "kind": "number",
+          "evidence": "Static consumers: 0x5f072, 0x5f5f1, 0x5f602"
+        },
+        {
+          "id": "backtrack.max-range",
+          "label": "Max range",
+          "offset": 116,
+          "type": "f32",
+          "min": 0,
+          "max": 12,
+          "step": 0.05,
+          "unit": "blocks",
+          "kind": "number",
+          "evidence": "Static consumers: 0x5f078, 0x5f604, 0x5f60b"
+        },
+        {
+          "id": "backtrack.weapons-only",
+          "label": "Weapons only",
+          "offset": 120,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "step": 1,
+          "unit": "",
+          "kind": "boolean",
+          "evidence": "Static consumers: 0x5edc1, 0x523e0, 0x52e30"
+        },
+        {
+          "id": "backtrack.require-click",
+          "label": "Require click",
+          "offset": 121,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "step": 1,
+          "unit": "",
+          "kind": "boolean",
+          "evidence": "Static consumers: 0x5ed20, 0x5edeb"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "lag-range",
+      "name": "Lag Range",
+      "category": "Combat",
+      "object_slot_rva": "0x49ed30",
+      "vtable_rva": "0x46bce0",
+      "fields": [
+        {
+          "id": "lag-range.enabled",
+          "label": "Enabled",
+          "offset": 484,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "lag-range.key",
+          "label": "Keybind",
+          "offset": 488,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        },
+        {
+          "id": "lag-range.delay",
+          "label": "Delay",
+          "offset": 496,
+          "type": "i32",
+          "min": 0,
+          "max": 1000,
+          "step": 1,
+          "unit": "ms",
+          "evidence": "native display and delay-function emulation; editor bounds",
+          "kind": "number"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "sprint-reset",
+      "name": "Sprint Reset",
+      "category": "Combat",
+      "object_slot_rva": "0x49ecb0",
+      "vtable_rva": "0x46d930",
+      "fields": [
+        {
+          "id": "sprint-reset.enabled",
+          "label": "Enabled",
+          "offset": 1536,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "sprint-reset.key",
+          "label": "Keybind",
+          "offset": 1540,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        },
+        {
+          "id": "sprint-reset.chance",
+          "label": "Chance",
+          "offset": 1552,
+          "type": "i32",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "evidence": "Sprint-reset multiplies a clamped random value by [config+0x610] at 0xbf3b4/0xbf577",
+          "kind": "number"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "misplace",
+      "name": "Misplace",
+      "category": "Combat",
+      "object_slot_rva": "0x49ed80",
+      "vtable_rva": "0x46c0e0",
+      "fields": [
+        {
+          "id": "misplace.enabled",
+          "label": "Enabled",
+          "offset": 552,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "misplace.key",
+          "label": "Keybind",
+          "offset": 556,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "right-clicker",
+      "name": "Right Clicker",
+      "category": "Combat",
+      "object_slot_rva": "0x49edb8",
+      "vtable_rva": "0x46d5b8",
+      "fields": [
+        {
+          "id": "right-clicker.enabled",
+          "label": "Enabled",
+          "offset": 764,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "right-clicker.key",
+          "label": "Keybind",
+          "offset": 768,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        },
+        {
+          "id": "right-clicker.cps",
+          "label": "Clicks per second",
+          "offset": 784,
+          "type": "f32",
+          "min": 1,
+          "max": 50,
+          "step": 0.5,
+          "unit": "CPS",
+          "kind": "number",
+          "evidence": "native display config read + live display; actual gameplay effect unmeasured"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "fake-lag",
+      "name": "Fake Lag",
+      "category": "Combat",
+      "object_slot_rva": "0x49ed28",
+      "vtable_rva": "0x46a020",
+      "fields": [
+        {
+          "id": "fake-lag.enabled",
+          "label": "Enabled",
+          "offset": 440,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "fake-lag.key",
+          "label": "Keybind",
+          "offset": 444,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        },
+        {
+          "id": "fake-lag.mode",
+          "label": "Mode",
+          "offset": 452,
+          "type": "i32",
+          "min": 1,
+          "max": 3,
+          "step": 1,
+          "unit": "",
+          "kind": "select",
+          "evidence": "Fake-lag mode is decoded by the jump table at 0x7ebc8 (values 1-4); the original modes are Toggle, Hold, Proximity",
+          "options": [
+            {
+              "value": 1,
+              "label": "Toggle"
+            },
+            {
+              "value": 2,
+              "label": "Hold"
+            },
+            {
+              "value": 3,
+              "label": "Proximity"
+            }
+          ]
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "anti-bot",
+      "name": "Anti-Bot",
+      "category": "Combat",
+      "object_slot_rva": "0x49ecd8",
+      "vtable_rva": "0x467d18",
+      "fields": [
+        {
+          "id": "anti-bot.enabled",
+          "label": "Enabled",
+          "offset": 1560,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "targeting",
+      "name": "Targeting",
+      "category": "Combat",
+      "object_slot_rva": "0x49ee00",
+      "vtable_rva": "0x46dd00",
+      "fields": [],
+      "mapping_complete": false
+    },
+    {
+      "id": "player-esp",
+      "name": "Player ESP",
+      "category": "Visual",
+      "object_slot_rva": "0x49eda0",
+      "vtable_rva": "0x46cb60",
+      "fields": [
+        {
+          "id": "player-esp.enabled",
+          "label": "Enabled",
+          "offset": 612,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "player-esp.key",
+          "label": "Keybind",
+          "offset": 616,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        },
+        {
+          "id": "player-esp.box-color-red",
+          "label": "Box Color Red",
+          "offset": 644,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "Player ESP RGB float triple loaded at 0xab3ae/0xab3b7",
+          "kind": "number"
+        },
+        {
+          "id": "player-esp.box-color-green",
+          "label": "Box Color Green",
+          "offset": 648,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "Player ESP RGB float triple loaded at 0xab3ae/0xab3b7",
+          "kind": "number"
+        },
+        {
+          "id": "player-esp.box-color-blue",
+          "label": "Box Color Blue",
+          "offset": 652,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "Player ESP RGB float triple loaded at 0xab3ae/0xab3b7",
+          "kind": "number"
+        },
+        {
+          "id": "player-esp.text-color-red",
+          "label": "Text Color Red",
+          "offset": 664,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "Player ESP second RGB float triple loaded at 0xacb6f/0xacb7d/0xacb8b",
+          "kind": "number"
+        },
+        {
+          "id": "player-esp.text-color-green",
+          "label": "Text Color Green",
+          "offset": 668,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "Player ESP second RGB float triple loaded at 0xacb6f/0xacb7d/0xacb8b",
+          "kind": "number"
+        },
+        {
+          "id": "player-esp.text-color-blue",
+          "label": "Text Color Blue",
+          "offset": 672,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "Player ESP second RGB float triple loaded at 0xacb6f/0xacb7d/0xacb8b",
+          "kind": "number"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "block-esp",
+      "name": "Block ESP",
+      "category": "Visual",
+      "object_slot_rva": "0x49ed08",
+      "vtable_rva": "0x468e40",
+      "fields": [
+        {
+          "id": "block-esp.enabled",
+          "label": "Enabled",
+          "offset": 124,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "block-esp.key",
+          "label": "Keybind",
+          "offset": 128,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "item-esp",
+      "name": "Item ESP",
+      "category": "Visual",
+      "object_slot_rva": "0x49ed60",
+      "vtable_rva": "0x46bae8",
+      "fields": [
+        {
+          "id": "item-esp.enabled",
+          "label": "Enabled",
+          "offset": 1120,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "outlines",
+      "name": "Outlines",
+      "category": "Visual",
+      "object_slot_rva": "0x49ed68",
+      "vtable_rva": "0x4677c0",
+      "fields": [
+        {
+          "id": "outlines.enabled",
+          "label": "Enabled",
+          "offset": 676,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "outlines.key",
+          "label": "Keybind",
+          "offset": 680,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        },
+        {
+          "id": "outlines.color-red",
+          "label": "Color Red",
+          "offset": 692,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "Outline RGB float triple loaded at 0x864bc/0x864c4",
+          "kind": "number"
+        },
+        {
+          "id": "outlines.color-green",
+          "label": "Color Green",
+          "offset": 696,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "Outline RGB float triple loaded at 0x864bc/0x864c4",
+          "kind": "number"
+        },
+        {
+          "id": "outlines.color-blue",
+          "label": "Color Blue",
+          "offset": 700,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "Outline RGB float triple loaded at 0x864bc/0x864c4",
+          "kind": "number"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "chams",
+      "name": "Chams",
+      "category": "Visual",
+      "object_slot_rva": "0x49ed18",
+      "vtable_rva": "0x469c98",
+      "fields": [
+        {
+          "id": "chams.enabled",
+          "label": "Enabled",
+          "offset": 380,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "chams.key",
+          "label": "Keybind",
+          "offset": 384,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        },
+        {
+          "id": "chams.visible-color-red",
+          "label": "Visible Color Red",
+          "offset": 392,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "First chams RGB float triple loaded at 0x79d41",
+          "kind": "number"
+        },
+        {
+          "id": "chams.visible-color-green",
+          "label": "Visible Color Green",
+          "offset": 396,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "First chams RGB float triple loaded at 0x79d41",
+          "kind": "number"
+        },
+        {
+          "id": "chams.visible-color-blue",
+          "label": "Visible Color Blue",
+          "offset": 400,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "First chams RGB float triple loaded at 0x79d41",
+          "kind": "number"
+        },
+        {
+          "id": "chams.hidden-color-red",
+          "label": "Hidden Color Red",
+          "offset": 404,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "Second chams RGB float triple loaded at 0x79da8",
+          "kind": "number"
+        },
+        {
+          "id": "chams.hidden-color-green",
+          "label": "Hidden Color Green",
+          "offset": 408,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "Second chams RGB float triple loaded at 0x79da8",
+          "kind": "number"
+        },
+        {
+          "id": "chams.hidden-color-blue",
+          "label": "Hidden Color Blue",
+          "offset": 412,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "Second chams RGB float triple loaded at 0x79da8",
+          "kind": "number"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "name-tags",
+      "name": "Name Tags",
+      "category": "Visual",
+      "object_slot_rva": "0x49ed90",
+      "vtable_rva": "0x46c3c8",
+      "fields": [
+        {
+          "id": "name-tags.enabled",
+          "label": "Enabled",
+          "offset": 572,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "name-tags.key",
+          "label": "Keybind",
+          "offset": 576,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        },
+        {
+          "id": "name-tags.color-red",
+          "label": "Color Red",
+          "offset": 588,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "Name-tag RGB float triple loaded at 0x622ed/0x69c89/0x6a064",
+          "kind": "number"
+        },
+        {
+          "id": "name-tags.color-green",
+          "label": "Color Green",
+          "offset": 592,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "Name-tag RGB float triple loaded at 0x622ed/0x69c89/0x6a064",
+          "kind": "number"
+        },
+        {
+          "id": "name-tags.color-blue",
+          "label": "Color Blue",
+          "offset": 596,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "Name-tag RGB float triple loaded at 0x622ed/0x69c89/0x6a064",
+          "kind": "number"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "tracers",
+      "name": "Tracers",
+      "category": "Visual",
+      "object_slot_rva": "0x49ecc0",
+      "vtable_rva": "0x4676c8",
+      "fields": [
+        {
+          "id": "tracers.enabled",
+          "label": "Enabled",
+          "offset": 820,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "tracers.key",
+          "label": "Keybind",
+          "offset": 824,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "hud",
+      "name": "HUD",
+      "category": "Visual",
+      "object_slot_rva": "0x49ed70",
+      "vtable_rva": "0x46b238",
+      "fields": [
+        {
+          "id": "hud.enabled",
+          "label": "Enabled",
+          "offset": 1576,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "hud.key",
+          "label": "Keybind",
+          "offset": 1580,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        },
+        {
+          "id": "hud.color-r",
+          "label": "Color Red",
+          "offset": 1608,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "HUD renderer packs [0x648,0x64c,0x650] into 0xFFRRGGBB at 0x8b77c",
+          "kind": "number"
+        },
+        {
+          "id": "hud.color-g",
+          "label": "Color Green",
+          "offset": 1612,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "HUD renderer packs [0x648,0x64c,0x650] into 0xFFRRGGBB at 0x8b77c",
+          "kind": "number"
+        },
+        {
+          "id": "hud.color-b",
+          "label": "Color Blue",
+          "offset": 1616,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "HUD renderer packs [0x648,0x64c,0x650] into 0xFFRRGGBB at 0x8b77c",
+          "kind": "number"
+        },
+        {
+          "id": "hud.opacity",
+          "label": "Opacity",
+          "offset": 1604,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "HUD renderer clamps [config+0x644] to 1.0 and uses it as text alpha at 0x8babe",
+          "kind": "number"
+        },
+        {
+          "id": "hud.watermark",
+          "label": "Watermark",
+          "offset": 1584,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "Main HUD text pass at 0x8b605/0x8b610",
+          "kind": "boolean"
+        },
+        {
+          "id": "hud.background",
+          "label": "Background",
+          "offset": 1585,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "Second HUD pass is called only when [config+0x631] is set (0x8c1ef -> 0x8ac20)",
+          "kind": "boolean"
+        },
+        {
+          "id": "hud.fps",
+          "label": "FPS",
+          "offset": 1586,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "Second HUD text block at 0x8b635",
+          "kind": "boolean"
+        },
+        {
+          "id": "hud.module-list",
+          "label": "Module List",
+          "offset": 1587,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "HUD list block at 0x8b6e9/0x8b968",
+          "kind": "boolean"
+        },
+        {
+          "id": "hud.ping",
+          "label": "Ping",
+          "offset": 1588,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "HUD info block at 0x8b9fa",
+          "kind": "boolean"
+        },
+        {
+          "id": "hud.coordinates",
+          "label": "Coordinates",
+          "offset": 1589,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "Selects the second info string at 0x8ba07/0x8ba16",
+          "kind": "boolean"
+        },
+        {
+          "id": "hud.keybinds",
+          "label": "Keybinds",
+          "offset": 1595,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "Adds the keybind/extra line spacing at 0x8bb76",
+          "kind": "boolean"
+        },
+        {
+          "id": "hud.notifications",
+          "label": "Notifications",
+          "offset": 1596,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "HUD notification path at 0x97f65/0xb52c8",
+          "kind": "boolean"
+        },
+        {
+          "id": "hud.obfuscate",
+          "label": "Obfuscate Text",
+          "offset": 1597,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "Per-character HUD obfuscation loop at 0x8b980/0x8ba34",
+          "kind": "boolean"
+        },
+        {
+          "id": "hud.target-hud",
+          "label": "Target HUD",
+          "offset": 1598,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "Final HUD element pass at 0x8bde3",
+          "kind": "boolean"
+        },
+        {
+          "id": "hud.scale",
+          "label": "Scale",
+          "offset": 1600,
+          "type": "f32",
+          "min": 0.5,
+          "max": 2.0,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "HUD text width/height are divided by 2 * [config+0x640] at 0x8acd9/0x8ad1b and 0x8ad5a/0x8ad99",
+          "kind": "number"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "radar",
+      "name": "Radar",
+      "category": "Visual",
+      "object_slot_rva": "0x49ede8",
+      "vtable_rva": "0x46cf08",
+      "fields": [
+        {
+          "id": "radar.enabled",
+          "label": "Enabled",
+          "offset": 1312,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "bed-plates",
+      "name": "Bed Plates",
+      "category": "Visual",
+      "object_slot_rva": "0x49edf0",
+      "vtable_rva": "0x468988",
+      "fields": [
+        {
+          "id": "bed-plates.enabled",
+          "label": "Enabled",
+          "offset": 1376,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "trajectories",
+      "name": "Trajectories",
+      "category": "Visual",
+      "object_slot_rva": "0x49edf8",
+      "vtable_rva": "0x46e6a8",
+      "fields": [
+        {
+          "id": "trajectories.enabled",
+          "label": "Enabled",
+          "offset": 1388,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "trajectories.key",
+          "label": "Keybind",
+          "offset": 1392,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "notifications",
+      "name": "Notifications",
+      "category": "Visual",
+      "object_slot_rva": "0x49ed98",
+      "vtable_rva": "0x46c5e0",
+      "fields": [],
+      "mapping_complete": false
+    },
+    {
+      "id": "sprint",
+      "name": "Sprint",
+      "category": "Movement",
+      "object_slot_rva": "0x49edc0",
+      "vtable_rva": "0x46d7a8",
+      "fields": [
+        {
+          "id": "sprint.enabled",
+          "label": "Enabled",
+          "offset": 788,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "sprint.key",
+          "label": "Keybind",
+          "offset": 792,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "strafe",
+      "name": "Strafe",
+      "category": "Movement",
+      "object_slot_rva": "0x49edc8",
+      "vtable_rva": "0x46dad8",
+      "fields": [
+        {
+          "id": "strafe.enabled",
+          "label": "Enabled",
+          "offset": 796,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "strafe.key",
+          "label": "Keybind",
+          "offset": 800,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        },
+        {
+          "id": "strafe.range",
+          "label": "Range",
+          "offset": 808,
+          "type": "f32",
+          "min": 0,
+          "max": 10,
+          "step": 0.1,
+          "unit": "blocks",
+          "evidence": "Strafe adds [config+0x328] to its radius and compares squared target distance at 0xc0e86/0xc0930",
+          "kind": "number"
+        },
+        {
+          "id": "strafe.delay",
+          "label": "Delay",
+          "offset": 812,
+          "type": "i32",
+          "min": 0,
+          "max": 1000,
+          "step": 1,
+          "unit": "ms",
+          "evidence": "Strafe uses [config+0x32c] for the randomized cooldown at 0xc0e30/0xc1049",
+          "kind": "number"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "bridge-assist",
+      "name": "Bridge Assist",
+      "category": "Movement",
+      "object_slot_rva": "0x49ed10",
+      "vtable_rva": "0x469b68",
+      "fields": [
+        {
+          "id": "bridge-assist.enabled",
+          "label": "Enabled",
+          "offset": 356,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "bridge-assist.key",
+          "label": "Keybind",
+          "offset": 360,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        },
+        {
+          "id": "bridge-assist.require-sneak",
+          "label": "Require Sneak",
+          "offset": 368,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "Bridge-assist predicate checks [config+0x170] against the sneak key state at 0x786b7",
+          "kind": "boolean"
+        },
+        {
+          "id": "bridge-assist.blatant",
+          "label": "Blatant",
+          "offset": 369,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "Bridge-assist predicate takes the alternate target path when [config+0x171] is set at 0x786d4",
+          "kind": "boolean"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "timer",
+      "name": "Timer",
+      "category": "Movement",
+      "object_slot_rva": "0x49edd0",
+      "vtable_rva": "0x46dea8",
+      "fields": [
+        {
+          "id": "timer.enabled",
+          "label": "Enabled",
+          "offset": 920,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "timer.key",
+          "label": "Keybind",
+          "offset": 924,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        },
+        {
+          "id": "timer.speed",
+          "label": "Timer speed",
+          "offset": 936,
+          "type": "f32",
+          "min": 0.1,
+          "max": 3,
+          "step": 0.05,
+          "unit": "x",
+          "kind": "number",
+          "evidence": "Static consumers: 0xc2a4a, 0xc2a55"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "freelook",
+      "name": "Freelook",
+      "category": "Movement",
+      "object_slot_rva": "0x49ed50",
+      "vtable_rva": "0x46a7f0",
+      "fields": [
+        {
+          "id": "freelook.enabled",
+          "label": "Enabled",
+          "offset": 532,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "freelook.key",
+          "label": "Keybind",
+          "offset": 536,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        },
+        {
+          "id": "freelook.sensitivity",
+          "label": "Sensitivity",
+          "offset": 544,
+          "type": "f32",
+          "min": 0.1,
+          "max": 2.0,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "Freelook reads [config+0x220] as a float multiplier at 0x8553d",
+          "kind": "number"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "auto-item",
+      "name": "Auto Item",
+      "category": "Utility",
+      "object_slot_rva": "0x49ece8",
+      "vtable_rva": "0x4682f8",
+      "fields": [
+        {
+          "id": "auto-item.enabled",
+          "label": "Enabled",
+          "offset": 1028,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "auto-item.key",
+          "label": "Keybind",
+          "offset": 1032,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "auto-soup",
+      "name": "Auto Soup",
+      "category": "Utility",
+      "object_slot_rva": "0x49ecf0",
+      "vtable_rva": "0x468418",
+      "fields": [
+        {
+          "id": "auto-soup.enabled",
+          "label": "Enabled",
+          "offset": 892,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "auto-soup.key",
+          "label": "Keybind",
+          "offset": 896,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        },
+        {
+          "id": "auto-soup.health",
+          "label": "Health",
+          "offset": 908,
+          "type": "i32",
+          "min": 1,
+          "max": 20,
+          "step": 1,
+          "unit": "HP",
+          "evidence": "Auto-soup compares current health against [config+0x38c] at 0x5ce99/0x5cea2; value is clamped to 19 at 0x5ce13",
+          "kind": "number"
+        },
+        {
+          "id": "auto-soup.delay",
+          "label": "Delay",
+          "offset": 916,
+          "type": "i32",
+          "min": 0,
+          "max": 20,
+          "step": 1,
+          "unit": "x50 ms",
+          "evidence": "Auto-soup randomizes around [config+0x394] and multiplies by 50 ms at 0x5cfbf..0x5d025",
+          "kind": "number"
+        },
+        {
+          "id": "auto-soup.randomize",
+          "label": "Randomize Delay",
+          "offset": 912,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "When [config+0x390] is set, auto-soup adds 25-75 ms of random delay at 0x5d099..0x5d0ff",
+          "kind": "boolean"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "auto-totem",
+      "name": "Auto Totem",
+      "category": "Utility",
+      "object_slot_rva": "0x49ecf8",
+      "vtable_rva": "0x468528",
+      "fields": [
+        {
+          "id": "auto-totem.enabled",
+          "label": "Enabled",
+          "offset": 1060,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "auto-totem.key",
+          "label": "Keybind",
+          "offset": 1064,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        },
+        {
+          "id": "auto-totem.delay",
+          "label": "Delay",
+          "offset": 1072,
+          "type": "i32",
+          "min": 0,
+          "max": 1000,
+          "step": 1,
+          "unit": "ms",
+          "evidence": "Auto-totem update randomizes around [config+0x430] +/- 50 ms (0x5dc32..0x5dc86)",
+          "kind": "number"
+        },
+        {
+          "id": "auto-totem.health",
+          "label": "Health",
+          "offset": 1076,
+          "type": "i32",
+          "min": 1,
+          "max": 20,
+          "step": 1,
+          "unit": "HP",
+          "evidence": "Update compares current health against [config+0x434] at 0x5dffb/0x5e004",
+          "kind": "number"
+        },
+        {
+          "id": "auto-totem.switch-back",
+          "label": "Switch Back",
+          "offset": 1068,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "Health-recovered branch checks [config+0x42c] before restoring the previous item at 0x5e009",
+          "kind": "boolean"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "chest-stealer",
+      "name": "Chest Stealer",
+      "category": "Utility",
+      "object_slot_rva": "0x49ed20",
+      "vtable_rva": "0x469e48",
+      "fields": [
+        {
+          "id": "chest-stealer.enabled",
+          "label": "Enabled",
+          "offset": 416,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "chest-stealer.key",
+          "label": "Keybind",
+          "offset": 420,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        },
+        {
+          "id": "chest-stealer.silent",
+          "label": "Silent",
+          "offset": 424,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "Chest Stealer reads [config+0x1a8] to choose silent container packets at 0x7c3f9 and 0x7d600",
+          "kind": "boolean"
+        },
+        {
+          "id": "chest-stealer.filter",
+          "label": "Filter",
+          "offset": 425,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "Chest Stealer gates its container/item name whitelist checks on [config+0x1a9] at 0x7bb73 and 0x7ce00",
+          "kind": "boolean"
+        },
+        {
+          "id": "chest-stealer.speed",
+          "label": "Speed",
+          "offset": 428,
+          "type": "i32",
+          "min": 0,
+          "max": 9,
+          "step": 1,
+          "unit": "",
+          "evidence": "Chest Stealer uses [config+0x1ac] at 0x7c6a2 to select the click delay band (0 ~= 135-145 ms, 9 ~= 5-15 ms)",
+          "kind": "number"
+        }
+      ],
+      "mapping_complete": true
+    },
+    {
+      "id": "fast-break",
+      "name": "Fast Break",
+      "category": "Utility",
+      "object_slot_rva": "0x49ed38",
+      "vtable_rva": "0x46a1a8",
+      "fields": [
+        {
+          "id": "fast-break.enabled",
+          "label": "Enabled",
+          "offset": 500,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "fast-break.key",
+          "label": "Keybind",
+          "offset": 504,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        },
+        {
+          "id": "fast-break.speed",
+          "label": "Speed",
+          "offset": 516,
+          "type": "f32",
+          "min": 1.0,
+          "max": 2.0,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "Fast-break update multiplies the break speed by [config+0x204] at 0x80d70",
+          "kind": "number"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "fast-place",
+      "name": "Fast Place",
+      "category": "Utility",
+      "object_slot_rva": "0x49ed40",
+      "vtable_rva": "0x46a2a0",
+      "fields": [
+        {
+          "id": "fast-place.enabled",
+          "label": "Enabled",
+          "offset": 520,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "fast-place.key",
+          "label": "Keybind",
+          "offset": 524,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "fireballs",
+      "name": "Fireballs",
+      "category": "Utility",
+      "object_slot_rva": "0x49ed48",
+      "vtable_rva": "0x46a5c0",
+      "fields": [
+        {
+          "id": "fireballs.enabled",
+          "label": "Enabled",
+          "offset": 1248,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "fireballs.color-red",
+          "label": "Color Red",
+          "offset": 1264,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "Fireball renderer reads RGB floats [0x4f0,0x4f4,0x4f8] at 0x82a0b/0x82a14/0x82a1d",
+          "kind": "number"
+        },
+        {
+          "id": "fireballs.color-green",
+          "label": "Color Green",
+          "offset": 1268,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "Fireball renderer reads RGB floats [0x4f0,0x4f4,0x4f8] at 0x82a0b/0x82a14/0x82a1d",
+          "kind": "number"
+        },
+        {
+          "id": "fireballs.color-blue",
+          "label": "Color Blue",
+          "offset": 1272,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "Fireball renderer reads RGB floats [0x4f0,0x4f4,0x4f8] at 0x82a0b/0x82a14/0x82a1d",
+          "kind": "number"
+        },
+        {
+          "id": "fireballs.opacity",
+          "label": "Opacity",
+          "offset": 1276,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "Fireball renderer reads alpha [config+0x4fc] at 0x829e2",
+          "kind": "number"
+        },
+        {
+          "id": "fireballs.size",
+          "label": "Size",
+          "offset": 1280,
+          "type": "f32",
+          "min": 0.1,
+          "max": 3.0,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "Fireball renderer reads size [config+0x500] at 0x8289d",
+          "kind": "number"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "friends",
+      "name": "Friends",
+      "category": "Utility",
+      "object_slot_rva": "0x49ed58",
+      "vtable_rva": "0x46a910",
+      "fields": [
+        {
+          "id": "friends.enabled",
+          "label": "Enabled",
+          "offset": 1684,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "macros",
+      "name": "Macros",
+      "category": "Utility",
+      "object_slot_rva": "0x49ed78",
+      "vtable_rva": "0x46be20",
+      "fields": [
+        {
+          "id": "macros.enabled",
+          "label": "Enabled",
+          "offset": 1080,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "macros.key",
+          "label": "Keybind",
+          "offset": 1084,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "misc",
+      "name": "Misc",
+      "category": "Utility",
+      "object_slot_rva": "0x49ed88",
+      "vtable_rva": "0x46bf90",
+      "fields": [],
+      "mapping_complete": false
+    },
+    {
+      "id": "refill",
+      "name": "Refill",
+      "category": "Utility",
+      "object_slot_rva": "0x49edb0",
+      "vtable_rva": "0x46d3d8",
+      "fields": [
+        {
+          "id": "refill.enabled",
+          "label": "Enabled",
+          "offset": 1004,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "refill.key",
+          "label": "Keybind",
+          "offset": 1008,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        },
+        {
+          "id": "refill.speed",
+          "label": "Speed",
+          "offset": 1020,
+          "type": "i32",
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "unit": "",
+          "evidence": "Refill computes a randomized delay range from [config+0x3fc]; higher values shorten the range (0xbb0a2..0xbb167)",
+          "kind": "number"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "block-in",
+      "name": "Block-In",
+      "category": "Utility",
+      "object_slot_rva": "0x49ede0",
+      "vtable_rva": "0x469848",
+      "fields": [
+        {
+          "id": "block-in.enabled",
+          "label": "Enabled",
+          "offset": 1284,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        }
+      ],
+      "mapping_complete": false
+    },
+    {
+      "id": "chat",
+      "name": "Chat",
+      "category": "Utility",
+      "object_slot_rva": "0x49ecc8",
+      "vtable_rva": "0x46b7d8",
+      "fields": [
+        {
+          "id": "chat.enabled",
+          "label": "Enabled",
+          "offset": 1620,
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "evidence": "config-copy emulation",
+          "kind": "enabled"
+        },
+        {
+          "id": "chat.key",
+          "label": "Keybind",
+          "offset": 1624,
+          "type": "u32",
+          "min": 0,
+          "max": 255,
+          "evidence": "config-copy emulation",
+          "kind": "key"
+        },
+        {
+          "id": "chat.color-red",
+          "label": "Color Red",
+          "offset": 1640,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "Chat RGB float triple loaded at 0x95e03/0x95e1c/0x95e38",
+          "kind": "number"
+        },
+        {
+          "id": "chat.color-green",
+          "label": "Color Green",
+          "offset": 1644,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "Chat RGB float triple loaded at 0x95e03/0x95e1c/0x95e38",
+          "kind": "number"
+        },
+        {
+          "id": "chat.color-blue",
+          "label": "Color Blue",
+          "offset": 1648,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "Chat RGB float triple loaded at 0x95e03/0x95e1c/0x95e38",
+          "kind": "number"
+        },
+        {
+          "id": "chat.background-red",
+          "label": "Background Color Red",
+          "offset": 1672,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "Chat background RGB float triple loaded at 0x8652a/0x86532",
+          "kind": "number"
+        },
+        {
+          "id": "chat.background-green",
+          "label": "Background Color Green",
+          "offset": 1676,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "Chat background RGB float triple loaded at 0x8652a/0x86532",
+          "kind": "number"
+        },
+        {
+          "id": "chat.background-blue",
+          "label": "Background Color Blue",
+          "offset": 1680,
+          "type": "f32",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "unit": "",
+          "evidence": "Chat background RGB float triple loaded at 0x8652a/0x86532",
+          "kind": "number"
+        }
+      ],
+      "mapping_complete": false
+    }
+  ],
+  "limits_note": "Only identified fields are exposed as named controls. Bounds are conservative editor limits, not recovered game limits.",
+  "ordered_pairs": [
+    [
+      "backtrack.min-range",
+      "backtrack.max-range"
+    ],
+    [
+      "velocity.min-horizontal",
+      "velocity.max-horizontal"
+    ],
+    [
+      "velocity.min-kite",
+      "velocity.max-kite"
+    ]
+  ],
+  "coverage": {
+    "writable_fields": 163,
+    "scanned_storage_offsets": 332,
+    "unresolved_scanned_offsets": 234,
+    "semantic_mapping_complete": false,
+    "unresolved": [
+      {
+        "offset": "0x4",
+        "owner_hint": "global",
+        "types": [
+          "int32"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x18",
+        "owner_hint": "aim assist",
+        "types": [
+          "int32"
+        ],
+        "references": 5
+      },
+      {
+        "offset": "0x1c",
+        "owner_hint": "aim assist",
+        "types": [
+          "int32"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x20",
+        "owner_hint": "aim assist",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x23",
+        "owner_hint": "aim assist",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x24",
+        "owner_hint": "aim assist",
+        "types": [
+          "byte"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x25",
+        "owner_hint": "aim assist",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x26",
+        "owner_hint": "aim assist",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x27",
+        "owner_hint": "aim assist",
+        "types": [
+          "byte"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x28",
+        "owner_hint": "aim assist",
+        "types": [
+          "bits32",
+          "f32"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x2c",
+        "owner_hint": "aim assist",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x38",
+        "owner_hint": "aim assist",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x3c",
+        "owner_hint": "aim assist",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x48",
+        "owner_hint": "auto clicker",
+        "types": [
+          "int32"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x4c",
+        "owner_hint": "auto clicker",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x50",
+        "owner_hint": "auto clicker",
+        "types": [
+          "byte"
+        ],
+        "references": 3
+      },
+      {
+        "offset": "0x54",
+        "owner_hint": "auto clicker",
+        "types": [
+          "int32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x60",
+        "owner_hint": "auto clicker",
+        "types": [
+          "bits32"
+        ],
+        "references": 3
+      },
+      {
+        "offset": "0x84",
+        "owner_hint": "block esp",
+        "types": [
+          "int32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x88",
+        "owner_hint": "block esp",
+        "types": [
+          "int32"
+        ],
+        "references": 9
+      },
+      {
+        "offset": "0x8c",
+        "owner_hint": "block esp",
+        "types": [
+          "int32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x90",
+        "owner_hint": "block esp",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x94",
+        "owner_hint": "block esp",
+        "types": [
+          "byte"
+        ],
+        "references": 4
+      },
+      {
+        "offset": "0x9c",
+        "owner_hint": "block esp",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0xac",
+        "owner_hint": "block esp",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0xbc",
+        "owner_hint": "block esp",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0xcc",
+        "owner_hint": "block esp",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0xdc",
+        "owner_hint": "block esp",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0xec",
+        "owner_hint": "block esp",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0xfc",
+        "owner_hint": "block esp",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x10c",
+        "owner_hint": "block esp",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x11c",
+        "owner_hint": "block esp",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x12c",
+        "owner_hint": "block esp",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x13c",
+        "owner_hint": "block esp",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x14c",
+        "owner_hint": "block esp",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x15c",
+        "owner_hint": "block esp",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x184",
+        "owner_hint": "chams",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x185",
+        "owner_hint": "chams",
+        "types": [
+          "byte"
+        ],
+        "references": 5
+      },
+      {
+        "offset": "0x1c8",
+        "owner_hint": "fake lag",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x1c9",
+        "owner_hint": "fake lag",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x1ca",
+        "owner_hint": "fake lag",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x1cb",
+        "owner_hint": "fake lag",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x1cd",
+        "owner_hint": "fake lag",
+        "types": [
+          "byte"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x1d0",
+        "owner_hint": "fake lag",
+        "types": [
+          "bits64"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x1d8",
+        "owner_hint": "fake lag",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x1dc",
+        "owner_hint": "fake lag",
+        "types": [
+          "int32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x1e0",
+        "owner_hint": "fake lag",
+        "types": [
+          "int32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x1ec",
+        "owner_hint": "lag range",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x1fc",
+        "owner_hint": "fast break",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x1fd",
+        "owner_hint": "fast break",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x1fe",
+        "owner_hint": "fast break",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x200",
+        "owner_hint": "fast break",
+        "types": [
+          "int32"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x210",
+        "owner_hint": "fast place",
+        "types": [
+          "int32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x21c",
+        "owner_hint": "freelook",
+        "types": [
+          "int32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x224",
+        "owner_hint": "freelook",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x225",
+        "owner_hint": "freelook",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x234",
+        "owner_hint": "misplace",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x238",
+        "owner_hint": "misplace",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x244",
+        "owner_hint": "name tags",
+        "types": [
+          "int32"
+        ],
+        "references": 3
+      },
+      {
+        "offset": "0x248",
+        "owner_hint": "name tags",
+        "types": [
+          "byte"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x258",
+        "owner_hint": "name tags",
+        "types": [
+          "byte"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x259",
+        "owner_hint": "name tags",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x25a",
+        "owner_hint": "name tags",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x25b",
+        "owner_hint": "name tags",
+        "types": [
+          "byte"
+        ],
+        "references": 5
+      },
+      {
+        "offset": "0x25c",
+        "owner_hint": "name tags",
+        "types": [
+          "byte"
+        ],
+        "references": 5
+      },
+      {
+        "offset": "0x25d",
+        "owner_hint": "name tags",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x25e",
+        "owner_hint": "name tags",
+        "types": [
+          "byte"
+        ],
+        "references": 3
+      },
+      {
+        "offset": "0x25f",
+        "owner_hint": "name tags",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x260",
+        "owner_hint": "name tags",
+        "types": [
+          "byte",
+          "int32"
+        ],
+        "references": 5
+      },
+      {
+        "offset": "0x261",
+        "owner_hint": "name tags",
+        "types": [
+          "byte"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x26c",
+        "owner_hint": "player esp",
+        "types": [
+          "int32"
+        ],
+        "references": 6
+      },
+      {
+        "offset": "0x270",
+        "owner_hint": "player esp",
+        "types": [
+          "byte"
+        ],
+        "references": 3
+      },
+      {
+        "offset": "0x271",
+        "owner_hint": "player esp",
+        "types": [
+          "byte"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x274",
+        "owner_hint": "player esp",
+        "types": [
+          "int32"
+        ],
+        "references": 8
+      },
+      {
+        "offset": "0x278",
+        "owner_hint": "player esp",
+        "types": [
+          "byte"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x27c",
+        "owner_hint": "player esp",
+        "types": [
+          "bits32",
+          "bits64"
+        ],
+        "references": 5
+      },
+      {
+        "offset": "0x280",
+        "owner_hint": "player esp",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x290",
+        "owner_hint": "player esp",
+        "types": [
+          "byte"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x292",
+        "owner_hint": "player esp",
+        "types": [
+          "byte"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x293",
+        "owner_hint": "player esp",
+        "types": [
+          "byte"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x294",
+        "owner_hint": "player esp",
+        "types": [
+          "byte"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x295",
+        "owner_hint": "player esp",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x296",
+        "owner_hint": "player esp",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x2b0",
+        "owner_hint": "outlines",
+        "types": [
+          "byte"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x2d8",
+        "owner_hint": "reach",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x2e0",
+        "owner_hint": "reach",
+        "types": [
+          "byte"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x2e4",
+        "owner_hint": "reach",
+        "types": [
+          "bits32"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x2e8",
+        "owner_hint": "reach",
+        "types": [
+          "int32"
+        ],
+        "references": 6
+      },
+      {
+        "offset": "0x2ec",
+        "owner_hint": "reach",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x2ed",
+        "owner_hint": "reach",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x2f0",
+        "owner_hint": "reach",
+        "types": [
+          "bits64"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x2f8",
+        "owner_hint": "reach",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x304",
+        "owner_hint": "right clicker",
+        "types": [
+          "byte"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x305",
+        "owner_hint": "right clicker",
+        "types": [
+          "byte"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x306",
+        "owner_hint": "right clicker",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x307",
+        "owner_hint": "right clicker",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x308",
+        "owner_hint": "right clicker",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x30c",
+        "owner_hint": "right clicker",
+        "types": [
+          "int32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x324",
+        "owner_hint": "strafe",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x325",
+        "owner_hint": "strafe",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x326",
+        "owner_hint": "strafe",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x330",
+        "owner_hint": "strafe",
+        "types": [
+          "int32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x33c",
+        "owner_hint": "tracers",
+        "types": [
+          "int32"
+        ],
+        "references": 7
+      },
+      {
+        "offset": "0x340",
+        "owner_hint": "tracers",
+        "types": [
+          "int32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x344",
+        "owner_hint": "tracers",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x345",
+        "owner_hint": "tracers",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x346",
+        "owner_hint": "tracers",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x354",
+        "owner_hint": "tracers",
+        "types": [
+          "byte"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x355",
+        "owner_hint": "tracers",
+        "types": [
+          "byte"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x358",
+        "owner_hint": "tracers",
+        "types": [
+          "bits32"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x35c",
+        "owner_hint": "tracers",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x368",
+        "owner_hint": "triggerbot",
+        "types": [
+          "int32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x370",
+        "owner_hint": "triggerbot",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x371",
+        "owner_hint": "triggerbot",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x372",
+        "owner_hint": "triggerbot",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x373",
+        "owner_hint": "triggerbot",
+        "types": [
+          "byte"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x374",
+        "owner_hint": "triggerbot",
+        "types": [
+          "int32"
+        ],
+        "references": 6
+      },
+      {
+        "offset": "0x378",
+        "owner_hint": "triggerbot",
+        "types": [
+          "bits32"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x384",
+        "owner_hint": "auto soup",
+        "types": [
+          "int32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x3a0",
+        "owner_hint": "timer",
+        "types": [
+          "int32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x3a4",
+        "owner_hint": "timer",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x3a5",
+        "owner_hint": "timer",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x3a6",
+        "owner_hint": "timer",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x3a7",
+        "owner_hint": "timer",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x3ac",
+        "owner_hint": "timer",
+        "types": [
+          "int32"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x3d4",
+        "owner_hint": "velocity",
+        "types": [
+          "int32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x3e0",
+        "owner_hint": "velocity",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x3e1",
+        "owner_hint": "velocity",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x3e4",
+        "owner_hint": "velocity",
+        "types": [
+          "int32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x3e8",
+        "owner_hint": "velocity",
+        "types": [
+          "int32"
+        ],
+        "references": 4
+      },
+      {
+        "offset": "0x3f8",
+        "owner_hint": "refill",
+        "types": [
+          "int32"
+        ],
+        "references": 4
+      },
+      {
+        "offset": "0x400",
+        "owner_hint": "refill",
+        "types": [
+          "byte"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x401",
+        "owner_hint": "refill",
+        "types": [
+          "byte"
+        ],
+        "references": 6
+      },
+      {
+        "offset": "0x402",
+        "owner_hint": "refill",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x403",
+        "owner_hint": "refill",
+        "types": [
+          "byte"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x40c",
+        "owner_hint": "auto item",
+        "types": [
+          "int32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x410",
+        "owner_hint": "auto item",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x411",
+        "owner_hint": "auto item",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x412",
+        "owner_hint": "auto item",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x413",
+        "owner_hint": "auto item",
+        "types": [
+          "byte"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x414",
+        "owner_hint": "auto item",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x415",
+        "owner_hint": "auto item",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x418",
+        "owner_hint": "auto item",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x41c",
+        "owner_hint": "auto item",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x420",
+        "owner_hint": "auto item",
+        "types": [
+          "int32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x45c",
+        "owner_hint": "macros",
+        "types": [
+          "int32"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x468",
+        "owner_hint": "item esp",
+        "types": [
+          "int32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x46c",
+        "owner_hint": "item esp",
+        "types": [
+          "int32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x474",
+        "owner_hint": "item esp",
+        "types": [
+          "bits64"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x47c",
+        "owner_hint": "item esp",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x484",
+        "owner_hint": "item esp",
+        "types": [
+          "bits64"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x48c",
+        "owner_hint": "item esp",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x494",
+        "owner_hint": "item esp",
+        "types": [
+          "bits64"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x49c",
+        "owner_hint": "item esp",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x4a4",
+        "owner_hint": "item esp",
+        "types": [
+          "bits64"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x4ac",
+        "owner_hint": "item esp",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x4b4",
+        "owner_hint": "item esp",
+        "types": [
+          "bits64"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x4bc",
+        "owner_hint": "item esp",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x4c4",
+        "owner_hint": "item esp",
+        "types": [
+          "bits64"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x4cc",
+        "owner_hint": "item esp",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x4d4",
+        "owner_hint": "item esp",
+        "types": [
+          "bits64"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x4dc",
+        "owner_hint": "item esp",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x4e8",
+        "owner_hint": "fireballs",
+        "types": [
+          "int32"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x4ec",
+        "owner_hint": "fireballs",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x510",
+        "owner_hint": "block-in",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x512",
+        "owner_hint": "block-in",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x514",
+        "owner_hint": "block-in",
+        "types": [
+          "bits32"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x518",
+        "owner_hint": "block-in",
+        "types": [
+          "int32"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x51c",
+        "owner_hint": "block-in",
+        "types": [
+          "int32"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x528",
+        "owner_hint": "radar",
+        "types": [
+          "int32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x52c",
+        "owner_hint": "radar",
+        "types": [
+          "int32"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x530",
+        "owner_hint": "radar",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x568",
+        "owner_hint": "bed plates",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x574",
+        "owner_hint": "trajectories",
+        "types": [
+          "int32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x57c",
+        "owner_hint": "trajectories",
+        "types": [
+          "bits64"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x584",
+        "owner_hint": "trajectories",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x588",
+        "owner_hint": "trajectories",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x58c",
+        "owner_hint": "trajectories",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x590",
+        "owner_hint": "trajectories",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x594",
+        "owner_hint": "trajectories",
+        "types": [
+          "bits64"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x59c",
+        "owner_hint": "trajectories",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x5a0",
+        "owner_hint": "trajectories",
+        "types": [
+          "byte"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x5a4",
+        "owner_hint": "trajectories",
+        "types": [
+          "bits64"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x5ac",
+        "owner_hint": "trajectories",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x5b0",
+        "owner_hint": "trajectories",
+        "types": [
+          "byte"
+        ],
+        "references": 4
+      },
+      {
+        "offset": "0x5b4",
+        "owner_hint": "trajectories",
+        "types": [
+          "bits64"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x5bc",
+        "owner_hint": "trajectories",
+        "types": [
+          "bits32"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x5c0",
+        "owner_hint": "trajectories",
+        "types": [
+          "byte"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x5d0",
+        "owner_hint": "trajectories",
+        "types": [
+          "byte"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x5e0",
+        "owner_hint": "trajectories",
+        "types": [
+          "byte"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x5f8",
+        "owner_hint": "hit select",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x608",
+        "owner_hint": "sprint reset",
+        "types": [
+          "int32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x60c",
+        "owner_hint": "sprint reset",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x614",
+        "owner_hint": "sprint reset",
+        "types": [
+          "int32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x620",
+        "owner_hint": "anti-bot",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x621",
+        "owner_hint": "anti-bot",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x622",
+        "owner_hint": "anti-bot",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x623",
+        "owner_hint": "anti-bot",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x624",
+        "owner_hint": "anti-bot",
+        "types": [
+          "byte"
+        ],
+        "references": 9
+      },
+      {
+        "offset": "0x625",
+        "owner_hint": "anti-bot",
+        "types": [
+          "byte"
+        ],
+        "references": 7
+      },
+      {
+        "offset": "0x636",
+        "owner_hint": "hud",
+        "types": [
+          "byte"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x637",
+        "owner_hint": "hud",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x638",
+        "owner_hint": "hud",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x639",
+        "owner_hint": "hud",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x63a",
+        "owner_hint": "hud",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x65c",
+        "owner_hint": "chat",
+        "types": [
+          "int32"
+        ],
+        "references": 7
+      },
+      {
+        "offset": "0x660",
+        "owner_hint": "chat",
+        "types": [
+          "int32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x664",
+        "owner_hint": "chat",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x674",
+        "owner_hint": "chat",
+        "types": [
+          "bits32"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x678",
+        "owner_hint": "chat",
+        "types": [
+          "bits32",
+          "f32"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x67c",
+        "owner_hint": "chat",
+        "types": [
+          "byte"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x680",
+        "owner_hint": "chat",
+        "types": [
+          "int32"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x684",
+        "owner_hint": "chat",
+        "types": [
+          "byte"
+        ],
+        "references": 5
+      },
+      {
+        "offset": "0x695",
+        "owner_hint": "friends",
+        "types": [
+          "byte"
+        ],
+        "references": 15
+      },
+      {
+        "offset": "0x698",
+        "owner_hint": "friends",
+        "types": [
+          "bits32",
+          "bits64"
+        ],
+        "references": 5
+      },
+      {
+        "offset": "0x69c",
+        "owner_hint": "friends",
+        "types": [
+          "bits32",
+          "qword"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x6a0",
+        "owner_hint": "friends",
+        "types": [
+          "bits32"
+        ],
+        "references": 4
+      },
+      {
+        "offset": "0x6a4",
+        "owner_hint": "friends",
+        "types": [
+          "byte"
+        ],
+        "references": 3
+      },
+      {
+        "offset": "0x6a5",
+        "owner_hint": "friends",
+        "types": [
+          "byte"
+        ],
+        "references": 7
+      },
+      {
+        "offset": "0x6a8",
+        "owner_hint": "friends",
+        "types": [
+          "byte"
+        ],
+        "references": 11
+      },
+      {
+        "offset": "0x6a9",
+        "owner_hint": "friends",
+        "types": [
+          "byte"
+        ],
+        "references": 15
+      },
+      {
+        "offset": "0x6aa",
+        "owner_hint": "friends",
+        "types": [
+          "byte"
+        ],
+        "references": 15
+      },
+      {
+        "offset": "0x6ac",
+        "owner_hint": "friends",
+        "types": [
+          "bits32",
+          "bits64"
+        ],
+        "references": 3
+      },
+      {
+        "offset": "0x6b0",
+        "owner_hint": "friends",
+        "types": [
+          "bits32",
+          "qword"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x6b4",
+        "owner_hint": "friends",
+        "types": [
+          "bits32"
+        ],
+        "references": 2
+      },
+      {
+        "offset": "0x6b8",
+        "owner_hint": "friends",
+        "types": [
+          "byte"
+        ],
+        "references": 3
+      },
+      {
+        "offset": "0x6b9",
+        "owner_hint": "friends",
+        "types": [
+          "byte"
+        ],
+        "references": 7
+      },
+      {
+        "offset": "0x6bc",
+        "owner_hint": "friends",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x6bd",
+        "owner_hint": "friends",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x6be",
+        "owner_hint": "friends",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x6bf",
+        "owner_hint": "friends",
+        "types": [
+          "byte"
+        ],
+        "references": 1
+      },
+      {
+        "offset": "0x6c1",
+        "owner_hint": "friends",
+        "types": [
+          "byte"
+        ],
+        "references": 9
+      },
+      {
+        "offset": "0x6c4",
+        "owner_hint": "friends",
+        "types": [
+          "int32"
+        ],
+        "references": 15
+      },
+      {
+        "offset": "0x6c8",
+        "owner_hint": "friends",
+        "types": [
+          "bits32"
+        ],
+        "references": 1
+      }
+    ]
+  }
+}
